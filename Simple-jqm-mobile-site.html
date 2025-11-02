@@ -11,16 +11,135 @@
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
   <style>
-    body { font-family: Arial, sans-serif; }
-    .logo { font-weight:700; font-size:18px; }
-    .hero { padding: 1.2rem; text-align: center; background: #f5f5f5; border-radius: 10px; margin-bottom: 1rem; }
-    .btn-wide { display:block; width:90%; margin:0.4rem auto; }
-    .card { padding: .8rem; border-radius:8px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1rem; }
-    .highlight { color: #007BFF; font-weight: bold; }
-    .interactive:hover { background: #e6f7ff; cursor: pointer; transition: 0.3s; }
-    .icon-home-btn { position: absolute; right: 10px; top: 10px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f0f6ff, #fff);
+      color: #333;
+    }
+
+    /* Header & Footer */
+    .ui-header, .ui-footer {
+      background: linear-gradient(90deg, #007bff, #00a8ff);
+      color: white !important;
+      border: none;
+    }
+
+    .ui-header h1, .ui-footer h4 {
+      color: white !important;
+      font-weight: 600;
+      text-shadow: none;
+    }
+
+    /* Logo */
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Cards */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, #e3f2ff, #fdfdfd);
+      text-align: center;
+      border-left: 6px solid #007bff;
+    }
+
+    .highlight {
+      color: #007bff;
+      font-weight: 700;
+    }
+
+    /* Buttons */
+    .btn-wide {
+      display: block;
+      width: 90%;
+      margin: 0.6rem auto;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #007bff, #00a8ff);
+      color: #fff !important;
+      border: none;
+      text-shadow: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-wide:hover {
+      background: linear-gradient(90deg, #006ae6, #0095e6);
+    }
+
+    /* Interactive hover */
+    .interactive:hover {
+      background-color: #e8f3ff !important;
+      transition: 0.3s;
+      border-radius: 6px;
+    }
+
+    /* Listview */
+    .ui-listview li a {
+      font-weight: 500;
+      color: #333 !important;
+    }
+
+    /* Form */
+    input[type="email"], input[type="text"] {
+      border-radius: 10px !important;
+      border: 1px solid #ccc !important;
+      padding: 0.6rem !important;
+      box-shadow: none !important;
+    }
+
+    button.ui-btn {
+      background: linear-gradient(90deg, #007bff, #00a8ff);
+      border: none;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    button.ui-btn:hover {
+      background: linear-gradient(90deg, #006ae6, #0095e6);
+    }
+
+    /* Popup */
+    #popupInfo {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Menu Panel */
+    #menuHome {
+      background: #f8fbff;
+    }
+
+    #menuHome h3 {
+      color: #007bff;
+      font-weight: 700;
+    }
+
+    /* Home icon */
+    .icon-home-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+
+    /* Footer text */
+    .ui-footer {
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Home page -->
@@ -66,36 +185,38 @@
     </div>
   </div>
 
-  <!-- Additional pages -->
+  <!-- Events Page -->
   <div data-role="page" id="events">
     <div data-role="header" data-position="fixed">
       <h1>Upcoming Events</h1>
       <a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-notext icon-home-btn">Home</a>
     </div>
     <div role="main" class="ui-content">
-      <ul data-role="listview">
-        <li>Music Concert - 15th Oct</li>
-        <li>Art Workshop - 20th Oct</li>
-        <li>Food Festival - 25th Oct</li>
+      <ul data-role="listview" data-inset="true">
+        <li><strong>🎵 Music Concert</strong> - 15th Oct</li>
+        <li><strong>🎨 Art Workshop</strong> - 20th Oct</li>
+        <li><strong>🍴 Food Festival</strong> - 25th Oct</li>
       </ul>
     </div>
   </div>
 
+  <!-- Categories Page -->
   <div data-role="page" id="categories">
     <div data-role="header" data-position="fixed">
       <h1>Event Categories</h1>
       <a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-notext icon-home-btn">Home</a>
     </div>
     <div role="main" class="ui-content">
-      <ul data-role="listview">
-        <li>Music</li>
-        <li>Art & Culture</li>
-        <li>Food & Drinks</li>
-        <li>Workshops</li>
+      <ul data-role="listview" data-inset="true">
+        <li>🎶 Music</li>
+        <li>🎭 Art & Culture</li>
+        <li>🍕 Food & Drinks</li>
+        <li>🧠 Workshops</li>
       </ul>
     </div>
   </div>
 
+  <!-- Signup Page -->
   <div data-role="page" id="signup">
     <div data-role="header" data-position="fixed">
       <h1>Sign Up</h1>
